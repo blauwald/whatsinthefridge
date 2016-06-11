@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @frozen.errors.any? %>
+<% @frozen.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Frozen</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_frozen" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <!-- <label for="user_id" class="control-label">
+        User
+      </label>
+    -->
+    <input type="hidden" id="user_id" value="<%= current_user.id %>">
+  </div>
+
+  <!-- Label and input for image_of_grocery -->
+  <div class="form-group">
+    <label for="image_of_grocery" class="control-label">
+      Image
+    </label>
+
+    <input type="text" id="image_of_grocery" name="image_of_grocery" placeholder="Image of grocery" class="form-control" value="<%= @frozen.image_of_grocery %>">
+  </div>
+
+  <!-- Label and input for grocery_name -->
+  <div class="form-group">
+    <label for="grocery_name" class="control-label">
+      Name
+    </label>
+
+    <input type="text" id="grocery_name" name="grocery_name" placeholder="Grocery name" class="form-control" value="<%= @frozen.grocery_name %>">
+  </div>
+
+  <!-- Label and input for date_of_purchase -->
+  <div class="form-group">
+    <label for="date_of_purchase" class="control-label">
+      Purchase date
+    </label>
+
+    <input type="text" id="date_of_purchase" name="date_of_purchase" placeholder="Date of purchase" class="form-control" value="<%= @frozen.date_of_purchase %>">
+  </div>
+
+  <button class="btn btn-success">
+    Create Frozen
+  </button>
+  or
+  <a href="/frozens">Cancel</a>
+</form>
+</div>
+</div>

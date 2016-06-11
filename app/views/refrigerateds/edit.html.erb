@@ -1,0 +1,74 @@
+<!-- Validation failure messages -->
+<% if @refrigerated.errors.any? %>
+<% @refrigerated.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Refrigerated</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_refrigerated/<%= @refrigerated.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <!-- <label for="user_id" class="control-label">
+        User
+      </label> -->
+
+      <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @refrigerated.user_id %>">
+    </div>
+
+    <!-- Label and input for image_of_grocery -->
+    <div class="form-group">
+      <label for="image_of_grocery" class="control-label">
+        Image
+      </label>
+
+      <input type="text" id="image_of_grocery" name="image_of_grocery" placeholder="Image file upload" class="form-control" value="<%= @refrigerated.image_of_grocery %>">
+    </div>
+
+    <!-- Label and input for grocery_name -->
+    <div class="form-group">
+      <label for="grocery_name" class="control-label">
+        Name
+      </label>
+
+      <input type="text" id="grocery_name" name="grocery_name" placeholder="Grocery name" class="form-control" value="<%= @refrigerated.grocery_name %>">
+    </div>
+
+    <!-- Label and input for date_of_purchase -->
+    <div class="form-group">
+      <label for="date_of_purchase" class="control-label">
+        Purchase date
+      </label>
+
+      <input type="text" id="date_of_purchase" name="date_of_purchase" placeholder="Date" class="form-control" value="<%= @refrigerated.date_of_purchase %>">
+    </div>
+
+
+    <!-- Label and input for date_of_experation -->
+    <div class="form-group">
+      <label for="date_of_experation" class="control-label">
+        Experation date
+      </label>
+
+      <input type="text" id="date_of_experation" name="date_of_experation" placeholder="Date" class="form-control" value="<%= @refrigerated.date_of_experation %>">
+    </div>
+
+    <button class="btn btn-warning">
+      Update Refrigerated
+    </button>
+    or
+    <a href="/refrigerateds/<%= @refrigerated.id %>">Cancel</a>
+  </form>
+</div>
+</div>

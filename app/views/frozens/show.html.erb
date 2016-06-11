@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h3>Frozen Groceries</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Image</dt>
+      <dd><%= @frozen.image_of_grocery %></dd>
+      <dt>Name</dt>
+      <dd><%= @frozen.grocery_name %></dd>
+      <dt>Purchase date</dt>
+      <dd><%= @frozen.date_of_purchase %></dd>
+      <dt>Who bought this</dt>
+      <dd><%= @frozen.user_id %></dd>
+      <dt>Comments</dt>
+      <dd><%= @frozen.date_of_purchase %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/frozens" class="btn btn-default">
+        Back
+      </a>
+      <a href="/frozens/<%= @frozen.id %>/edit" class="btn btn-default">
+        Edit
+      </a>
+      <a href="/delete_frozen/<%= @frozen.id %>" class="btn btn-default" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

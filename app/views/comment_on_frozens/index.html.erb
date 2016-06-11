@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>
+    Comment on frozens
+    <a href="/comment_on_frozens/new" class="btn btn-lg btn-success">New Comment on frozen</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Actions</th>
+      </tr>
+
+      <% @comment_on_frozens.each do |comment_on_frozen| %>
+      <tr>
+        <td>
+          <a href="/comment_on_frozens/<%= comment_on_frozen.id %>" class="btn btn-primary">Show</a>
+          <a href="/comment_on_frozens/<%= comment_on_frozen.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_comment_on_frozen/<%= comment_on_frozen.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

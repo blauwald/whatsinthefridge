@@ -1,0 +1,56 @@
+<div class="page-header">
+  <h1>
+    My Groceries
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h4> Refrigerated Groceries </h4>
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Purchase date</th>
+        <th>Experation date</th>
+        <th>Who bought this</th>
+        <th>Status</th>
+        <th>comments</th>
+      </tr>
+
+      <% @my_groceries.each do |my_grocery| %>
+      <tr>
+        <td><%= my_grocery.frozen_id %></td>
+        <td><%= my_grocery.refrigerated_id %></td>
+        <td><%= my_grocery.user_id %></td>
+        <td>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-md-12">
+    <h4> Frozen Groceries </h4>
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Purchase date</th>
+        <th>Who bought this</th>
+        <th>Status</th>
+        <th>comments</th>
+        <th>Actions</th>
+      </tr>
+      
+      <% @my_groceries.each do |my_grocery| %>
+      <tr>
+        <td><%= my_grocery.frozen_id %></td>
+        <td><%= my_grocery.refrigerated_id %></td>
+        <td><%= my_grocery.user_id %></td>
+        <td>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

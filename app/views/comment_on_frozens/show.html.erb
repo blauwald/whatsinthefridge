@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h3>Comment On Frozen #<%= @comment_on_frozen.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/comment_on_frozens" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/comment_on_frozens/<%= @comment_on_frozen.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_comment_on_frozen/<%= @comment_on_frozen.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

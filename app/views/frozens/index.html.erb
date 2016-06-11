@@ -1,0 +1,39 @@
+<div class="page-header">
+  <h1>
+    Frozens Groceries
+    <a href="/frozens/new" class="btn btn-lg btn-success">add new</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Purchase date</th>
+        <th>Who bought this</th>
+        <th>comments</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @frozens.each do |frozen| %>
+      <tr>
+        <td><%= frozen.image_of_grocery %></td>
+        <td><%= frozen.grocery_name %></td>
+        <td><%= frozen.date_of_purchase %></td>
+        <td><%= frozen.user_id %></td>
+        <td>
+        <a href="/frozens/<%= frozen.id %>" class="btn btn-default">view</a>
+        </td>
+
+        <td>
+          <a href="/frozens/<%= frozen.id %>" class="btn btn-default">Show</a>
+          <a href="/frozens/<%= frozen.id %>/edit" class="btn btn-default">Edit</a>
+          <a href="/delete_frozen/<%= frozen.id %>" class="btn btn-default" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
